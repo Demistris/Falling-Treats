@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CatchingTreats : MonoBehaviour
 {
+    public PlayerStats playerStats;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("jest");
         collision.gameObject.SetActive(false);
+        playerStats.isTreatCaught = true;
     }
 }
