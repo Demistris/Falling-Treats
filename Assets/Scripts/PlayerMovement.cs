@@ -4,48 +4,38 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSpeed = 10f;
-    public GameObject Player;
-
     private Rigidbody2D playerBody;
-    private float screenWidth;
+    private float moveSpeed = 10f;
 
     void Start()
     {
-        screenWidth = Screen.width;
-        playerBody = Player.GetComponent<Rigidbody2D>();
+        playerBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        int i = 0;
-        //loop over every touch found
-        while(i < Input.touchCount)
+        if(Input.touchCount > 0)
         {
-            if(Input.GetTouch(i).position.x > screenWidth / 2)
+            Touch touch = Input.GetTouch(0);
+
+            switch(touch.phase)
             {
-                //move right
-                RunPlayer(1.0f);
+                case TouchPhase.Began:
+                    if(touch.position.x < Screen.width /2)
+                    {
+                        playerBody.velocity = new Vector2(-moveSpeed, 0f);
+                    }
+
+                    if(touch.position.x > Screen.width /2)
+                    {
+                        playerBody.velocity = new Vector2(moveSpeed, 0f);
+                    }
+                    break;
+
+                case TouchPhase.Ended:
+                    playerBody.velocity = new Vector2(0f, 0f);
+                    break;
             }
-            if(Input.GetTouch(i).position.x < screenWidth / 2)
-            {
-                //move left
-                RunPlayer(-1.0f);
-            }
-            ++i;
         }
-    }
-
-    void FixedUpdate()
-    {
-        #if UNITY_EDITOR
-        RunPlayer(Input.GetAxis("Horizontal"));
-        #endif
-    }
-
-    private void RunPlayer(float horizontalInput)
-    {
-        //move player
-        playerBody.AddForce(new Vector2(horizontalInput * MoveSpeed + Time.deltaTime, 0));
     }
 }
