@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 798189655444851267}
   - component: {fileID: 2449605472318602879}
   - component: {fileID: 4193401124437916714}
+  - component: {fileID: -3812622578754368437}
   m_Layer: 0
-  m_Name: TreatStar
-  m_TagString: Untagged
+  m_Name: TreatCandy
+  m_TagString: Treat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,14 +51,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7775, y: 0.74}
+    oldSize: {x: 0.805, y: 0.5}
     newSize: {x: 3.11, y: 2.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 0.8, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &2449605472318602879
 SpriteRenderer:
@@ -96,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f717bf78e21e8bc4583729ffefcc1dff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e875e0a8c9800949ab711140760b606, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,3 +120,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91937d7202f2a0428e17e632666dda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallingSpeed: 0
+  playerStats: {fileID: 3668139782252092023, guid: 3134c2d2e709c244f9203779c1d83475,
+    type: 3}
+--- !u!50 &-3812622578754368437
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087487110135209166}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

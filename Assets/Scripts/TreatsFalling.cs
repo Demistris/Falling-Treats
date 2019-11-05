@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TreatsFalling : MonoBehaviour
 {
-    private float fallingSpeed;
+    public float fallingSpeed;
 
     private void Start()
     {
-        fallingSpeed = 3;
+        fallingSpeed = 4;
     }
 
     void Update()
