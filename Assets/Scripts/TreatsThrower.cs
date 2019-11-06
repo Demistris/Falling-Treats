@@ -19,7 +19,7 @@ public class TreatsThrower : MonoBehaviour
         timer = Random.Range(0.1f, 1f);
         typeOfTreat = Random.Range(0, 5);
         throwerDiamondCounter = Random.Range(1, 21);
-        Vector2 randomSpawn = new Vector2(Random.Range(-2.5f, 2.5f), gameObject.transform.position.y);
+        Vector2 randomSpawn = new Vector2(Random.Range(-2.4f, 2.4f), gameObject.transform.position.y);
 
         if(throwerDiamondCounter == 5)
         {

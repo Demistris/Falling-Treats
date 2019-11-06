@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
     public int Points = 0;
-    public int Diamonds = 0;
+    public int BestScore = 0;
+    public static int Diamonds = 0;
     public int Lifes = 5;
     public int Trash = 2;
 
     public TextMeshProUGUI PointsText;
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI BestScoreText;
     public TextMeshProUGUI DiamondsText;
     public TextMeshProUGUI LifesText;
     public TextMeshProUGUI TrashText;
@@ -20,26 +24,60 @@ public class PlayerStats : MonoBehaviour
     public bool isTrashCaught = false;
     public bool isLifeLost = false;
 
-    public int counter;
+    public EndGameMenu EndGameMenu;
+
+    public int DifficulteIncreaseCounter;
+
+    public static PlayerStats Instance { get { return _instance; } }
+    private static PlayerStats _instance;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
 
     void Update()
     {
         StatChanger();
 
         PointsText.text = "" + Points;
+        ScoreText.text = "Score: " + Points;
+        BestScore = PlayerPrefs.GetInt("BestScore");
         DiamondsText.text = "" + Diamonds;
         LifesText.text = "" + Lifes;
         TrashText.text = "" + Trash;
 
-        if (counter == 10)
+        if (Points > BestScore)
         {
-            FasterFalling();
-            counter = 0;
+            BestScore = Points;
+            BestScoreText.text = "Best Score: " + Points;
+
+            PlayerPrefs.SetInt("BestScore", BestScore);
+        }
+        else
+        {
+            BestScoreText.text = "Best Score: " + BestScore;
         }
 
-        if(Trash <= 0 || Lifes <= 0)
+        if (Trash <= 0 || Lifes <= 0)
         {
             EndGame();
+        }
+
+        if(EndGameMenu.IsGameEnd == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
         }
     }
 
@@ -48,7 +86,7 @@ public class PlayerStats : MonoBehaviour
         if (isTreatCaught == true)
         {
             Points += 10;
-            counter += 1;
+            DifficulteIncreaseCounter += 1;
             isTreatCaught = false;
         }
 
@@ -71,14 +109,8 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void FasterFalling()
-    {
-        //fallingSpeed += 1;
-        //Debug.Log(fallingSpeed);
-    }
-
     void EndGame()
     {
-        
+        EndGameMenu.EndOfGame();
     }
 }
