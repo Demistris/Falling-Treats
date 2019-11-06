@@ -24,7 +24,8 @@ public class PlayerStats : MonoBehaviour
     public bool isTrashCaught = false;
     public bool isLifeLost = false;
 
-    public EndGameMenu EndGameMenu;
+    public GameMenu GameMenu;
+    public GameObject Texts;
 
     public int DifficulteIncreaseCounter;
 
@@ -71,13 +72,15 @@ public class PlayerStats : MonoBehaviour
             EndGame();
         }
 
-        if(EndGameMenu.IsGameEnd == true)
+        if(GameMenu.IsGameEnd == true || GameMenu.IsMainMenu == true)
         {
             Time.timeScale = 0;
+            Texts.SetActive(false);
         }
         else
         {
             Time.timeScale = 1;
+            Texts.SetActive(true);
         }
     }
 
@@ -111,6 +114,6 @@ public class PlayerStats : MonoBehaviour
 
     void EndGame()
     {
-        EndGameMenu.EndOfGame();
+        GameMenu.EndOfGame();
     }
 }
