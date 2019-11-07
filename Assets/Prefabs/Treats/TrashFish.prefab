@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4193401124437916714}
   - component: {fileID: -3812622578754368437}
   m_Layer: 0
-  m_Name: TreatStar
-  m_TagString: Treat
+  m_Name: TrashFish
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,14 +51,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5183333, y: 0.49333334}
-    newSize: {x: 3.11, y: 2.96}
+    oldSize: {x: 0.284375, y: 0.894375}
+    newSize: {x: 4.55, y: 14.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47, y: 0.42}
+  m_Size: {x: 0.28, y: 0.9}
   m_EdgeRadius: 0
 --- !u!212 &2449605472318602879
 SpriteRenderer:
@@ -97,12 +97,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f717bf78e21e8bc4583729ffefcc1dff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5e7218e25519343b5e5649622211d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.11, y: 2.96}
+  m_Size: {x: 4.55, y: 14.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
