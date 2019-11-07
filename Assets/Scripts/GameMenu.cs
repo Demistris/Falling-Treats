@@ -9,7 +9,8 @@ public class GameMenu : MonoBehaviour
     public PlayerStats playerStats;
     public GameObject TreatsThrower;
     public GameObject EndGameUI;
-    public GameObject MainMenuUI;
+
+    public EndGameMenu EndGameMenu;
 
     public bool IsMainMenu = true;
     public bool IsGameEnd = false;
@@ -19,12 +20,6 @@ public class GameMenu : MonoBehaviour
         EndGameUI.SetActive(true);
         TreatsThrower.SetActive(false);
         IsGameEnd = true;
-    }
-
-    public void StartButton()
-    {
-        IsMainMenu = false;
-        MainMenuUI.SetActive(false);
     }
 
     public void NewGameButton()

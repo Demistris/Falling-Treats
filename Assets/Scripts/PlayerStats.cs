@@ -51,6 +51,7 @@ public class PlayerStats : MonoBehaviour
         PointsText.text = "" + Points;
         ScoreText.text = "Score: " + Points;
         BestScore = PlayerPrefs.GetInt("BestScore");
+        Diamonds = PlayerPrefs.GetInt("Diamonds");
         DiamondsText.text = "" + Diamonds;
         LifesText.text = "" + Lifes;
         TrashText.text = "" + Trash;
@@ -96,6 +97,7 @@ public class PlayerStats : MonoBehaviour
         if (isDiamondCaught == true)
         {
             Diamonds += 10;
+            PlayerPrefs.SetInt("Diamonds", Diamonds);
             isDiamondCaught = false;
         }
 
