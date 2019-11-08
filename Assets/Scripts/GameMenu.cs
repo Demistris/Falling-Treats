@@ -12,6 +12,9 @@ public class GameMenu : MonoBehaviour
 
     public EndGameMenu EndGameMenu;
 
+    private GameObject _mainMenuCanvas;
+    private GameObject _optionsCanvas;
+
     public bool IsMainMenu = true;
     public bool IsGameEnd = false;
 
