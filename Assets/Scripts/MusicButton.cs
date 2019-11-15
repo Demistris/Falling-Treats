@@ -14,16 +14,24 @@ public class MusicButton : MonoBehaviour
     private const string IS_MUSIC_ON = "IsMusicOn";
     public AudioMixerGroup musicGroup;
 
+    private bool isStartOver;
+
     private void Start()
     {
         if (PlayerPrefs.GetInt(IS_MUSIC_ON) == 1)
         {
-            TurnOff();
+            buttonText.text = "ON";
+            Ball.transform.position = onPosition.transform.position;
+            buttonText.transform.position = offPosition.transform.position;
         }
         else
         {
-            TurnOn();
+            buttonText.text = "OFF";
+            Ball.transform.position = offPosition.transform.position;
+            buttonText.transform.position = onPosition.transform.position;
         }
+
+        isStartOver = true;
     }
 
     private void TurnOff()
@@ -32,7 +40,6 @@ public class MusicButton : MonoBehaviour
         Ball.transform.position = offPosition.transform.position;
         buttonText.transform.position = onPosition.transform.position;
         musicGroup.audioMixer.SetFloat("musicVolume", -80f);
-        PlayerPrefs.SetInt(IS_MUSIC_ON, 0);
     }
 
     private void TurnOn()
@@ -41,11 +48,15 @@ public class MusicButton : MonoBehaviour
         Ball.transform.position = onPosition.transform.position;
         buttonText.transform.position = offPosition.transform.position;
         musicGroup.audioMixer.SetFloat("musicVolume", 0f);
-        PlayerPrefs.SetInt(IS_MUSIC_ON, 1);
     }
 
     public void IsMusicOn()
     {
+        if (isStartOver == false)
+        {
+            return;
+        }
+
         if (PlayerPrefs.GetInt(IS_MUSIC_ON) == 1)
         {
             TurnOff();
