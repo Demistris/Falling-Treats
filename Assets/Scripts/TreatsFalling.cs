@@ -14,7 +14,7 @@ public class TreatsFalling : MonoBehaviour
 
         if (counter == 10)
         {
-            fallingSpeed += 1;
+            fallingSpeed += 0.5f;
             counter = 0;
             Debug.Log(fallingSpeed);
         }

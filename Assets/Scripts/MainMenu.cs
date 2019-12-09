@@ -47,6 +47,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator Wait()
     {
+        TreatsFalling.fallingSpeed = 4;
         yield return new WaitForSeconds(.5f);
         gameObject.SetActive(false);
     }
