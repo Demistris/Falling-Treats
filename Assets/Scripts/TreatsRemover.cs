@@ -10,7 +10,7 @@ public class TreatsRemover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Treat" || collision.gameObject.tag == "Diamond")
+        if (collision.gameObject.tag == "Treat")
         {
             PlayWrongSound();
             playerStats.isLifeLost = true;
