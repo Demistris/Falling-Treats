@@ -10,6 +10,7 @@ public class ItemStats : MonoBehaviour
     public int Price;
     public TextMeshProUGUI PriceText;
     public GameObject Texts;
+    private bool itemIsAlreadyBought = false;
     public bool isItemBought
     {
         get { return PlayerPrefs.GetInt("BoughtItem" + Id) == 1 ? true : false; }
@@ -26,11 +27,14 @@ public class ItemStats : MonoBehaviour
 
     public void BuyItems()
     {
-        if (PlayerStats.Diamonds >= Price)
+        if(itemIsAlreadyBought == false)
         {
-            isItemBought = true;
-            PlayerStats.Diamonds -= Price;
-            PlayerPrefs.SetInt("Diamonds", PlayerStats.Diamonds);
+            if (PlayerStats.Diamonds >= Price)
+            {
+                isItemBought = true;
+                PlayerStats.Diamonds -= Price;
+                PlayerPrefs.SetInt("Diamonds", PlayerStats.Diamonds);
+            }
         }
 
         RefreshBoughtState();
@@ -40,6 +44,7 @@ public class ItemStats : MonoBehaviour
     {
         if (isItemBought == true)
         {
+            itemIsAlreadyBought = true;
             image = GetComponent<Image>();
             image.color = Color.white;
             var tempColor = image.color;

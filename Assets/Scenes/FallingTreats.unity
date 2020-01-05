@@ -492,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
@@ -504,11 +504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1125260590}
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      value: BuyItems
       objectReference: {fileID: 0}
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
@@ -523,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
@@ -4259,7 +4259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 592.3}
+  m_AnchoredPosition: {x: 95.999985, y: 592.3}
   m_SizeDelta: {x: 64.29, y: 57.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &667561358
@@ -5488,7 +5488,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.7371428, y: 1.6414286}
+  m_Size: {x: 8.47, y: 11.49}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5991,7 +5991,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.2757143, y: 1.6414286}
+  m_Size: {x: 8.94, y: 11.49}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9103,7 +9103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -195}
+  m_AnchoredPosition: {x: -39, y: -195}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1318635686
@@ -14259,7 +14259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -41.13}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 491.4}
+  m_AnchoredPosition: {x: 95.999985, y: 491.4}
   m_SizeDelta: {x: 64.29, y: 57.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1966628997
@@ -14511,7 +14511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 355.00003, y: 567.00006}
+  m_AnchoredPosition: {x: 311, y: 567.00006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2002117417
@@ -15787,10 +15787,40 @@ PrefabInstance:
       objectReference: {fileID: 1691378554}
     - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 21300000, guid: 458f42810efe87449b0271283d0445fa,
         type: 3}
+    - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1691378554}
+    - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BuyItems
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314264463513483797, guid: 68aba579fa02b8649b86b18d8035c12e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6314264462910728745, guid: 68aba579fa02b8649b86b18d8035c12e,
         type: 3}
       propertyPath: m_RootOrder
